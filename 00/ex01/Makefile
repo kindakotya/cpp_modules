@@ -6,16 +6,18 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 22:40:29 by gmayweat          #+#    #+#              #
-#    Updated: 2021/08/10 23:51:21 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/08/11 00:59:08 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = my_awesome_phonebook
 
 SRCS =					Phonebook.cpp \
+						Contact.cpp \
 						main.cpp
 
-HEAD =					Phonebook.hpp
+HEAD =					Phonebook.hpp \
+						Contact.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -27,20 +29,21 @@ FLAGS = -Wall -Wextra -Werror -I. -std=c++98
 
 vpath %.o objs
 
-.Phony: all $(NAME) clean fclean re $(OBJDIR)
+.Phony: all $(NAME) %.o clean fclean re $(OBJDIR)
 
 all: $(NAME)
 
 $(NAME): $(OBJDIR) $(OBJS)
 	clang++ $(FLAGS) $(OBJSPATH) -o $(NAME)
 
-%.o : %.c $(HEAD)
+%.o: %.cpp $(HEAD)
 	clang++ $(FLAGS) -o $(addprefix objs/, $@) -c $<
 
 $(OBJDIR):
 	mkdir $(OBJDIR)
 
 clean:
+	rm *.o
 	rm -rf $(OBJDIR)
 
 fclean:

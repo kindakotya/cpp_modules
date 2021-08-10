@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 19:47:39 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/10 23:49:57 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/11 01:22:39 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,22 @@
 # include <iomanip>
 # include <iostream>
 # include <string>
-
-class Contact
-{
-public:
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	u_int32_t	phone_number;
-	std::string	darkest_secret;
-};
+# include "Contact.hpp"
 
 class PhoneBook
 {
 private:
-	Contact	contacts[8];
+	Contact		contacts[8];
+	u_int8_t	next_number;
+	u_int8_t	nu_of_contacts;
+
+	void		add();
+	void		search();
 public:
 	PhoneBook();
-	~PhoneBook();
+	// ~PhoneBook();
 
 	void	open();
-	void	add();
-	void	search();
 };
 
 #endif

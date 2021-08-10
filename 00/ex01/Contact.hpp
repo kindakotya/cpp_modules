@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 20:06:49 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/10 23:59:55 by gmayweat         ###   ########.fr       */
+/*   Created: 2021/08/11 00:36:43 by gmayweat          #+#    #+#             */
+/*   Updated: 2021/08/11 00:59:41 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-int	main()
+#include <string>
+
+class Contact
 {
-	PhoneBook phonebook;
+public:
+	static std::string fields[5];
+	std::string infos[5];
+	enum field_list {
+					FIRST_NAME,
+					LAST_NAME,
+					NICKNAME,
+					PHONE_NUMBER,
+					DARKEST_SECRET
+					};
 
-	phonebook.open();
-	return (0);
-}
+	Contact();
+};
+
+#endif

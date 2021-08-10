@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 20:06:49 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/10 23:59:55 by gmayweat         ###   ########.fr       */
+/*   Created: 2021/08/11 00:36:39 by gmayweat          #+#    #+#             */
+/*   Updated: 2021/08/11 00:57:51 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "Contact.hpp"
 
-int	main()
+std::string Contact::fields[5]= {
+								"first name",
+								"last name",
+								"nickname",
+								"phone number",
+								"darkest secret"};
+
+Contact::Contact()
 {
-	PhoneBook phonebook;
-
-	phonebook.open();
-	return (0);
+	for (u_int8_t i = FIRST_NAME; i < DARKEST_SECRET; i++)
+		this->infos[i] = std::string();
 }
