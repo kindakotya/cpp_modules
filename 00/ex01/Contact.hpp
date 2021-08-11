@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 00:36:43 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/11 00:59:41 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/11 18:36:48 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CONTACT_HPP
 
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class Contact
 {
@@ -29,6 +31,7 @@ public:
 					};
 
 	Contact();
+	void	print(u_int16_t index, u_int16_t fields_to_print);
 };
 
 #endif

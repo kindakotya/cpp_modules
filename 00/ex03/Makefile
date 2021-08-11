@@ -6,50 +6,42 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 22:40:29 by gmayweat          #+#    #+#              #
-#    Updated: 2021/07/24 21:17:47 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/08/11 18:55:50 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = philosophers
+NAME = the_job_of_your_dreams
 
-SRCS =					parcer.c\
-						utils.c\
-						pasto.c\
-						eat.c\
-						philosophers_free.c\
-						to_stdout.c\
-						main.c
+SRCS =					Account.cpp \
+						tests.cpp \
 
-HEAD =					philosophers.h
+HEAD =					Account.hpp
 
-HEADPATH = $(addprefix includes/, $(HEAD))
-
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 OBJDIR = objs
 
 OBJSPATH = $(addprefix $(OBJDIR)/, $(OBJS))
 
-FLAGS = -g -Wall -Wextra -Werror -Iincludes# -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -I. -std=c++98
 
 vpath %.o objs
-vpath %.c srcs
-vpath %.h includes
 
-.Phony: all $(NAME) clean fclean re $(OBJDIR)
+.Phony: all $(NAME) %.o clean fclean re $(OBJDIR)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJDIR) $(OBJS)
-	clang $(FLAGS) $(OBJSPATH) -o $(NAME)
+$(NAME): $(OBJDIR) $(OBJS)
+	clang++ $(FLAGS) $(OBJSPATH) -o $(NAME)
 
-%.o : %.c $(HEADPATH)
-	clang $(FLAGS) -o $(addprefix objs/, $(patsubst %.c, %.o, $@)) -c $<
+%.o: %.cpp $(HEAD)
+	clang++ $(FLAGS) -o $(addprefix objs/, $@) -c $<
 
 $(OBJDIR):
 	mkdir $(OBJDIR)
 
 clean:
+	rm *.o
 	rm -rf $(OBJDIR)
 
 fclean:

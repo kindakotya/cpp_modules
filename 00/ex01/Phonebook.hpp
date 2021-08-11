@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 19:47:39 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/11 01:22:39 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/11 18:36:52 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ class PhoneBook
 {
 private:
 	Contact		contacts[8];
-	u_int8_t	next_number;
-	u_int8_t	nu_of_contacts;
+	u_int16_t	next_number;
+	u_int16_t	nu_of_contacts;
+	enum		PhoneBookSize {PHONE_BOOK_SIZE = 8};
 
 	void		add();
 	void		search();
