@@ -6,7 +6,7 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 22:40:29 by gmayweat          #+#    #+#              #
-#    Updated: 2021/08/11 00:59:08 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/08/11 19:21:31 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,6 @@ $(OBJDIR):
 	mkdir $(OBJDIR)
 
 clean:
-	rm *.o
 	rm -rf $(OBJDIR)
 
 fclean:
