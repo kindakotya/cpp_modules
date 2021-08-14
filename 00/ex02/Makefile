@@ -6,14 +6,14 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 22:40:29 by gmayweat          #+#    #+#              #
-#    Updated: 2021/08/11 19:21:39 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/08/14 21:31:18 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = the_job_of_your_dreams
 
 SRCS =					Account.cpp \
-						tests.cpp \
+						tests.cpp
 
 HEAD =					Account.hpp
 
