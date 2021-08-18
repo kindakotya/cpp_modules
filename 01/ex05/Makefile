@@ -6,16 +6,16 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 22:40:29 by gmayweat          #+#    #+#              #
-#    Updated: 2021/08/19 02:01:43 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/08/18 03:37:31 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed_is_for_losers
+NAME = karen20
 
 SRCS =					main.cpp \
-						Replace.cpp
+						Karen.cpp
 
-HEAD =					Replace.hpp
+HEAD =					Karen.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -23,11 +23,9 @@ OBJDIR = objs
 
 OBJSPATH = $(addprefix $(OBJDIR)/, $(OBJS))
 
-FLAGS = -Wall -Wextra -Werror -I./includes -std=c++98 -pedantic -g
+FLAGS = -Wall -Wextra -Werror -I. -std=c++98 -pedantic
 
 vpath %.o objs
-vpath %.cpp srcs
-vpath %.hpp includes
 
 .Phony: all $(NAME) %.o clean fclean re $(OBJDIR)
 

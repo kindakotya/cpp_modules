@@ -5,31 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 02:28:44 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/19 01:24:32 by gmayweat         ###   ########.fr       */
+/*   Created: 2021/08/18 03:40:38 by gmayweat          #+#    #+#             */
+/*   Updated: 2021/08/19 01:16:02 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include <string>
+#include "Karen.hpp"
 #include <iostream>
 
-int main()
+int	main()
 {
-	{
-		Weapon	club = Weapon("crude spiked club");
-		HumanA	bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon	club = Weapon("crude spiked club");
-		HumanB	jim("Jim");
-		jim.setWeapon(&club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
+	Karen karen;
+	std::cout << "Test DEBUG:" << std::endl;
+	karen.complain("DEBUG");
+	std::cout << std::endl;
+	std::cout << "Test INFO:" << std::endl;
+	karen.complain("INFO");
+	std::cout << std::endl;
+	std::cout << "Test WARNING:" << std::endl;
+	karen.complain("WARNING");
+	std::cout << std::endl;
+	std::cout << "Test ERROR:" << std::endl;
+	karen.complain("ERROR");
+	return 0;
 }
