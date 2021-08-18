@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 00:54:38 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/19 01:59:08 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/19 02:11:43 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ void	Replace::write_content(std::string s1, std::string s2)
 int	Replace::replace(std::string filename, std::string s1, std::string s2)
 {
 	if (s1.empty() || s2.empty()){
-		std::cerr << "Error: Nice try, maslyonok. STRING MUST BE NOT EMPTY." << std::endl;
+		std::cout << "Error: Nice try, maslyonok. STRING MUST BE NOT EMPTY." << std::endl;
 		return 1;
 	}
 	_fin.open(filename, std::ios_base::in);
 	if (!_fin.is_open()){
-		std::cerr << "Error: Can't open \"" << filename << "\"." << std::endl;
+		std::cout << "Error: Can't open \"" << filename << "\"." << std::endl;
 		return 1;
 	}
 	_fout.open(filename + ".replace", std::ios_base::trunc);
 	if (!_fout.is_open()){
-		std::cerr << "Error: Can't open \"" << filename << ".replace\"." << std::endl;
+		std::cout << "Error: Can't open \"" << filename << ".replace\"." << std::endl;
 		return 1;
 	}
 	write_content(s1, s2);
