@@ -6,7 +6,7 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 22:40:29 by gmayweat          #+#    #+#              #
-#    Updated: 2021/08/21 04:51:45 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/08/21 05:18:58 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,9 @@ SRCS =					main.cpp \
 
 HEAD =					Fixed.hpp
 
-
 OBJDIR = objs
 
 OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
-
-#OBJSPATH = $(addprefix $(OBJDIR)/, $(OBJS))
 
 DEPENDS = $(OBJS:%.o=%.d)
 
@@ -36,13 +33,13 @@ vpath %.d $(OBJDIR)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	clang++ $(FLAGS) $< -o $@
+	clang++ $(FLAGS) $(OBJS) -o $@
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(OBJDIR)
 	clang++ $(FLAGS) -MMD -o $@ -c $<
 
-include $(DEPENDS)
+-include $(DEPENDS)
 
 clean:
 	rm -rf $(OBJDIR)

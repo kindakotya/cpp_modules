@@ -6,16 +6,21 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:39:34 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/21 04:52:14 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/21 05:41:46 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <limits>
+#include "Fixed.hpp"
 
 int	main()
 {
-	// short c = USHRT_MAX / 2 + 1;
-
-	// std :: cout << c;
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
 }
