@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 00:54:38 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/19 02:11:43 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/21 01:45:10 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	Replace::write_content(std::string s1, std::string s2)
 	_file_content = strStr.str();
 	if (_file_content.empty())
 		return ;
-	for (size_t pos = 0; s1 != s2 && pos <= _file_content.size() - s1.size(); pos++){
+	for (size_t pos = 0; s1 != s2 && pos <= _file_content.size() && _file_content.size() > s1.size(); pos++){
 		if (!_file_content.compare(pos, s1.size(), s1)){
 			_file_content.erase(pos, s1.size());
 			_file_content.insert(pos, s2);

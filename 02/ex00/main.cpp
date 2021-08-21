@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:39:34 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/19 02:42:34 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/21 04:52:14 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main()
 {
-	short c = USHRT_MAX / 2 + 1;
+	// short c = USHRT_MAX / 2 + 1;
 
-	std :: cout << c;
+	// std :: cout << c;
 }

@@ -6,7 +6,7 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 22:40:29 by gmayweat          #+#    #+#              #
-#    Updated: 2021/08/19 02:21:45 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/08/21 04:51:45 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,28 +17,32 @@ SRCS =					main.cpp \
 
 HEAD =					Fixed.hpp
 
-OBJS = $(SRCS:.cpp=.o)
 
 OBJDIR = objs
 
-OBJSPATH = $(addprefix $(OBJDIR)/, $(OBJS))
+OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
+
+#OBJSPATH = $(addprefix $(OBJDIR)/, $(OBJS))
+
+DEPENDS = $(OBJS:%.o=%.d)
 
 FLAGS = -Wall -Wextra -Werror -I. -std=c++98 -pedantic
 
-vpath %.o objs
+vpath %.o $(OBJDIR)
+vpath %.d $(OBJDIR)
 
-.Phony: all $(NAME) %.o clean fclean re $(OBJDIR)
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJS)
-	clang++ $(FLAGS) $(OBJSPATH) -o $(NAME)
+$(NAME): $(OBJS)
+	clang++ $(FLAGS) $< -o $@
 
-%.o: %.cpp $(HEAD)
-	clang++ $(FLAGS) -o $(addprefix objs/, $@) -c $<
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(OBJDIR)
+	clang++ $(FLAGS) -MMD -o $@ -c $<
 
-$(OBJDIR):
-	mkdir $(OBJDIR)
+include $(DEPENDS)
 
 clean:
 	rm -rf $(OBJDIR)
