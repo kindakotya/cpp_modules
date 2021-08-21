@@ -6,12 +6,14 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:22:08 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/22 01:08:44 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/22 01:07:57 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
+
+#include <iostream>
 
 class Fixed
 {
@@ -22,10 +24,17 @@ private:
 public:
 	Fixed();
 	Fixed(const Fixed &obj);
+	Fixed(const int n);
+	Fixed(const float n);
 	~Fixed();
+	static int my_pow(int n, int p);
 	int		getRawBits() const;
 	void	setRawBits(int const raw);
-	Fixed operator=(const Fixed &obj);
+	int		getFracBits() const;
+	float	toFloat() const;
+	int		toInt() const;
+	Fixed					operator=(const Fixed &obj);
+	friend std::ostream&	operator<<(std::ostream &out, const Fixed &obj);
 };
 
 #endif
