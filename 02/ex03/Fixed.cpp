@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 03:02:37 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/22 02:17:46 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/25 02:03:54 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,25 +140,25 @@ Fixed	Fixed::operator/(const Fixed &obj2)
 }
 bool	operator<(const Fixed &obj1, const Fixed &obj2)
 {
-	return obj1._raw < obj2._raw;
+	return obj1.getRawBits() < obj2.getRawBits();
 }
 bool	operator<=(const Fixed &obj1, const Fixed &obj2)
 {
-	return obj1._raw  <= obj2._raw;
+	return obj1.getRawBits()  <= obj2.getRawBits();
 }
 bool	operator>(const Fixed &obj1, const Fixed &obj2)
 {
-	return obj1._raw > obj2._raw;
+	return obj1.getRawBits() > obj2.getRawBits();
 }
 bool	operator>=(const Fixed &obj1, const Fixed &obj2)
 {
-	return obj1._raw >= obj2._raw;
+	return obj1.getRawBits() >= obj2.getRawBits();
 }
 bool	operator!=(const Fixed &obj1, const Fixed &obj2)
 {
-	return obj1._raw != obj2._raw;
+	return obj1.getRawBits() != obj2.getRawBits();
 }
 bool	operator==(const Fixed &obj1, const Fixed &obj2)
 {
-	return obj1._raw == obj2._raw;
+	return obj1.getRawBits() == obj2.getRawBits();
 }

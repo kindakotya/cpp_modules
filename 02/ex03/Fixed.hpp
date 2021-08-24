@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:22:08 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/22 01:59:21 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/25 02:01:58 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private:
 	int						_raw;
-	static const int	_f_bits;
+	static const int		_f_bits;
 
 public:
 	Fixed();
@@ -46,13 +46,14 @@ public:
 	Fixed					operator-(const Fixed &obj2);
 	Fixed					operator*(const Fixed &obj2);
 	Fixed					operator/(const Fixed &obj2);
-	friend bool				operator<(const Fixed &obj1, const Fixed &obj2);
-	friend bool				operator<=(const Fixed &obj1, const Fixed &obj2);
-	friend bool				operator>(const Fixed &obj1, const Fixed &obj2);
-	friend bool				operator>=(const Fixed &obj1, const Fixed &obj2);
-	friend bool				operator!=(const Fixed &obj1, const Fixed &obj2);
-	friend bool				operator==(const Fixed &obj1, const Fixed &obj2);
-	friend std::ostream&	operator<<(std::ostream &out, const Fixed &obj);
 };
+	bool				operator<(const Fixed &obj1, const Fixed &obj2);
+	bool				operator<=(const Fixed &obj1, const Fixed &obj2);
+	bool				operator>(const Fixed &obj1, const Fixed &obj2);
+	bool				operator>=(const Fixed &obj1, const Fixed &obj2);
+	bool				operator!=(const Fixed &obj1, const Fixed &obj2);
+	bool				operator==(const Fixed &obj1, const Fixed &obj2);
+	std::ostream&		operator<<(std::ostream &out, const Fixed &obj);
+
 
 #endif

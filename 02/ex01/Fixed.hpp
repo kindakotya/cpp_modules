@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 02:22:08 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/22 01:07:57 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/08/25 02:01:03 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ public:
 	float	toFloat() const;
 	int		toInt() const;
 	Fixed					operator=(const Fixed &obj);
-	friend std::ostream&	operator<<(std::ostream &out, const Fixed &obj);
 };
+	std::ostream&	operator<<(std::ostream &out, const Fixed &obj);
+
 
 #endif
