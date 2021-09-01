@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/01 02:43:38 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 03:05:38 by gmayweat         ###   ########.fr       */
+/*   Created: 2021/08/25 02:17:33 by gmayweat          #+#    #+#             */
+/*   Updated: 2021/09/01 03:25:15 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include <iostream>
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-Dog::Dog(){
-	_type = "Dog";
-	std::cout << "Dog has born." << std::endl;
-}
+#include "WrongAnimal.hpp"
 
-Dog::~Dog(){
-	std::cout << "Dog has died." << std::endl;
-}
+class WrongCat : public WrongAnimal
+{
+public:
+	WrongCat();
+	~WrongCat();
 
-void	Dog::makeSound() const{
-	std::cout << "Woof!" << std::endl;
-}
+	// void	makeSound() const;
+};
+
+
+#endif
