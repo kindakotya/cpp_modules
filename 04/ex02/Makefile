@@ -6,18 +6,17 @@
 #    By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 22:40:29 by gmayweat          #+#    #+#              #
-#    Updated: 2021/09/01 03:31:51 by gmayweat         ###   ########.fr        #
+#    Updated: 2021/09/01 04:18:02 by gmayweat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = aaaaand_open
+NAME = abstract_class
 
 SRCS =					main.cpp \
 						Animal.cpp \
 						Cat.cpp \
 						Dog.cpp \
-						WrongAnimal.cpp \
-						WrongCat.cpp
+						Brain.cpp
 
 OBJDIR = objs
 
