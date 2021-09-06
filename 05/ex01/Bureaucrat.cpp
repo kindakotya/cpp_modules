@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 02:04:41 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 02:55:38 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/06 03:02:38 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,25 @@ Bureaucrat	Bureaucrat::operator=(Bureaucrat const & obj){
 
 Bureaucrat::~Bureaucrat(){}
 
-std::string	Bureaucrat::getName() const{
-	return _name;
-}
-int			Bureaucrat::getGrade() const{
-	return _grade;
+std::string	Bureaucrat::getName() const {return _name;}
+
+int			Bureaucrat::getGrade() const {return _grade;}
+
+void		Bureaucrat::signForm(Form & form) const{
+	if (form.isSign())
+		std::cout << form << " is already signed.";
+	else{
+		try{
+			form.beSigned(*this);
+			std::cout << *this << " signs Form" << form.getName() << '.';
+		}
+		catch (std::exception & e){
+			std::cout << *this << " can't sign Form" << form.getName() 
+				<< " because his grade is lower then Forms sign grade " 
+					<< form.getSigGrade() << '.';
+		}
+	}
+	std::cout << std::endl;
 }
 
 Bureaucrat&	Bureaucrat::operator++(){
