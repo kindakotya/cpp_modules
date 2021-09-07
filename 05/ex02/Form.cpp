@@ -6,11 +6,12 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 18:13:47 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 03:14:02 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/06 04:08:35 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include <iostream>
 
 Form::Form() : _name("00"), _grade_sig(150), _grade_ex(150), _sign(false) {}
 
@@ -33,10 +34,6 @@ _name(obj.getName()), _grade_sig(obj.getSigGrade()), _grade_ex(obj.getExGrade())
 }
 
 Form::~Form() {}
-
-Form	Form::operator=(Form const & obj){
-	return Form(obj);
-}
 
 std::ostream&	operator<<(std::ostream & out, Form const & obj){
 	out << "Form" << obj.getName() << " with " << obj.getSigGrade()

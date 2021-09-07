@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 17:39:43 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 03:13:50 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/07 05:43:20 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 class Form;
 #include "Bureaucrat.hpp"
-#include <exception>
 
 class Form
 {
@@ -29,14 +28,15 @@ public:
 	Form();
 	Form(std::string const & name, int const grade_sig, int const grade_ex);
 	Form(Form const & obj);
-	Form	operator=(Form const & obj);
-	~Form();
+	virtual ~Form();
 
-	std::string	getName() const;
-	int			getSigGrade() const;
-	int			getExGrade() const;
-	bool		isSign() const;
-	void		beSigned(Bureaucrat const & garry);
+	int				getExGrade() const;
+	bool			isSign() const;
+	void			beSigned(Bureaucrat const & garry);
+	std::string		getName() const;
+	int				getSigGrade() const;
+
+	virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception{
 		public: const char* what() const throw() {return "GradeTooHighException (Form)";}
@@ -44,10 +44,12 @@ public:
 	class GradeTooLowException : public std::exception{
 		public: const char* what() const throw() {return "GradeTooLowException (Form)";}
 	};
+	class ExecuteNotSignedFormException : public std::exception{
+		public: const char* what() const throw() {return "ExecuteNotSignedFormException (Form)";}
+	};
 };
 
 std::ostream&	operator<<(std::ostream & out, Form const & obj);
-
 
 
 #endif

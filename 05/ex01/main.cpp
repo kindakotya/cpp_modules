@@ -6,13 +6,14 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 01:38:48 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 03:02:12 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/06 03:13:44 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include <iostream>
+#include <exception>
 
 int main()
 {

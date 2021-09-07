@@ -6,11 +6,12 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 02:04:41 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 03:14:13 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/07 05:58:16 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include <iostream>
 
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name){
@@ -49,6 +50,25 @@ void		Bureaucrat::signForm(Form & form) const{
 				<< " because his grade is lower then Forms sign grade " 
 					<< form.getSigGrade() << '.';
 		}
+	}
+	std::cout << std::endl;
+}
+
+void	Bureaucrat::executeForm(Form const & form) const{
+	try{
+		std::cout << *this << " tries to execute Form"
+				<< form.getName() << '.' << std::endl;
+		form.execute(*this);
+		std::cout << "Done.";
+	}
+	catch (std::exception & e){
+		std::cout << *this << " can't sign Form" << form.getName() 
+				<< " because ";
+		if (!strcmp(e.what(),"GradeTooLowException (Form)"))
+			std::cout << "his grade is lower then Forms execute grade "
+					<< form.getExGrade() << '.';
+		else
+			std::cout << "form is not signed.";
 	}
 	std::cout << std::endl;
 }
