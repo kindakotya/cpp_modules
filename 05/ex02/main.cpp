@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 01:38:48 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/07 06:26:49 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/07 19:30:47 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 {
 	Bureaucrat	hermes("Hermes Conrad", 1);
 	Bureaucrat	philip("Philip J. Fry", 150);
-	std::cout << hermes << std::endl << philip << std::endl;
+	std::cout << hermes << std::endl << philip << std::endl << std::endl;
 	{
 		std::cout << "PresidentialPardonForm test:" << std::endl;
 		PresidentialPardonForm	form("Nixon");
