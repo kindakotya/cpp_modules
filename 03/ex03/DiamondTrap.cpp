@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 01:17:04 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/25 01:26:50 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:47:28 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const &obj)
 	this->_ad = obj._ad;
 }
 
-DiamondTrap	DiamondTrap::operator=(DiamondTrap const &obj)
+DiamondTrap&	DiamondTrap::operator=(DiamondTrap const &obj)
 {
 	this->_name = obj._name;
 	this->_hp = obj._hp;
@@ -47,6 +47,6 @@ DiamondTrap	DiamondTrap::operator=(DiamondTrap const &obj)
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "My name is " << _name << " and pcholy siely "
+	std::cout << "My name is " << _name << " and phooly siely "
 			<< ClapTrap::_name << " :C" << std::endl;
 }

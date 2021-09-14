@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:27:43 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/25 01:02:11 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:37:44 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ ClapTrap::ClapTrap(ClapTrap const &obj)
 	this->_ep = obj._ep;
 	this->_ad = obj._ad;
 }
-ClapTrap	ClapTrap::operator=(ClapTrap const &obj)
+ClapTrap&	ClapTrap::operator=(ClapTrap const &obj)
 {
 	this->_name = obj._name;
 	this->_hp = obj._hp;

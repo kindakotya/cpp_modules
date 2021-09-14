@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 18:00:15 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/25 01:16:43 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:41:45 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ FragTrap::FragTrap(FragTrap const &obj)
 	this->_ep = obj._ep;
 	this->_ad = obj._ad;
 }
-FragTrap	FragTrap::operator=(FragTrap const &obj)
+FragTrap&	FragTrap::operator=(FragTrap const &obj)
 {
 	this->_name = obj._name;
 	this->_hp = obj._hp;

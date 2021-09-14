@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:00:01 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/25 01:07:07 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:39:12 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ScavTrap::ScavTrap(ScavTrap const &obj)
 	this->_ad = obj._ad;
 }
 
-ScavTrap	ScavTrap::operator=(ScavTrap const &obj)
+ScavTrap&	ScavTrap::operator=(ScavTrap const &obj)
 {
 	this->_name = obj._name;
 	this->_hp = obj._hp;

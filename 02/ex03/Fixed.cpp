@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 03:02:37 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/25 02:03:54 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/14 18:59:07 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ const Fixed&	Fixed::max(const Fixed &obj1, const Fixed &obj2)
 	return (obj1 > obj2) ? obj1 : obj2;
 }
 
-Fixed Fixed::operator=(const Fixed &obj)
+Fixed&	Fixed::operator=(const Fixed &obj)
 {
 	this->_raw = obj._raw;
 	return *this;

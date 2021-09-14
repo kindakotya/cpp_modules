@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 03:02:37 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/22 01:08:33 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/14 18:50:12 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	Fixed::setRawBits(int const raw)
 	_raw = raw;
 }
 
-Fixed Fixed::operator=(const Fixed &obj)
+Fixed&	Fixed::operator=(const Fixed &obj)
 {
 	std::cout << "Assignation operator called." << std::endl;
 	this->_raw = obj._raw;

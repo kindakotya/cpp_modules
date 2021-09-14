@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:15:17 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/25 01:01:53 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:37:40 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	ClapTrap(ClapTrap const &obj);
 	~ClapTrap();
 
-	ClapTrap	operator=(ClapTrap const &obj);
+	ClapTrap&	operator=(ClapTrap const &obj);
 	void		attack(std::string const &target);
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);

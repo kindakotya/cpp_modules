@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 18:00:18 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/08/25 01:13:39 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:40:15 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	virtual ~FragTrap();
 	FragTrap(FragTrap const &obj);
 
-	FragTrap	operator=(FragTrap const &obj);
+	FragTrap&	operator=(FragTrap const &obj);
 	void		highFivesGuys();
 };
 
