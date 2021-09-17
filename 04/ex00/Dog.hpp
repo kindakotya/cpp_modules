@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 02:34:28 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 02:49:56 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/17 22:39:58 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ class Dog : public Animal
 public:
 	Dog();
 	~Dog();
+	Dog(Dog const & obj);
 
+	Dog&	operator=(Dog const & obj);
 	void	makeSound() const;
 };
 

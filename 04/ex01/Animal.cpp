@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 02:37:28 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 02:52:00 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/16 20:01:51 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@ Animal::Animal(){
 }
 
 Animal::Animal(Animal const &obj){
-	std::cout << "Animal has born." << std::endl;
-	this->_type = obj._type;
+	*this = obj;
 }
 
 Animal::~Animal(){
 	std::cout << "Animal has died." << std::endl;
 }
 
-Animal	Animal::operator=(Animal const &obj){
-	return Animal(obj);
+Animal&	Animal::operator=(Animal const &obj){
+	std::cout << "Animal has born." << std::endl;
+	this->_type = obj._type;
+	return *this;
 }
 
 std::string	Animal::getType() const{

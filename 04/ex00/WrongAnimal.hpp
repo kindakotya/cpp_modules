@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 02:08:32 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 03:15:06 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/17 22:45:16 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	WrongAnimal();
 	WrongAnimal(WrongAnimal const &obj);
 	virtual ~WrongAnimal();
-	WrongAnimal	operator=(WrongAnimal const &obj);
+	WrongAnimal&	operator=(WrongAnimal const &obj);
 
 	std::string	getType() const;
 	virtual void	makeSound() const;

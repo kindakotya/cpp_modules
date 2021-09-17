@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 02:42:29 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 04:07:11 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/17 22:47:55 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,14 @@ Cat::~Cat(){
 
 void	Cat::makeSound() const{
 	std::cout << "Meow." << std::endl;
+}
+
+Cat::Cat(Cat const & obj){
+	*this = obj;
+}
+
+Cat&	Cat::operator=(Cat const & obj){
+	std::cout << "Cat has born." << std::endl;
+	_type = obj._type;
+	return *this;
 }

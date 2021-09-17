@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 02:17:33 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 03:05:52 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/16 20:05:41 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ class Cat : public Animal
 public:
 	Cat();
 	~Cat();
+	Cat(Cat const & obj);
+
+	Cat&	operator=(Cat const & obj);
 
 	void	makeSound() const;
 };
