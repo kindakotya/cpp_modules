@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 02:42:29 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/17 22:47:55 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 05:05:29 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ Cat::Cat(Cat const & obj){
 Cat&	Cat::operator=(Cat const & obj){
 	std::cout << "Cat has born." << std::endl;
 	_type = obj._type;
+	_brain = new Brain(*obj._brain);
 	return *this;
 }

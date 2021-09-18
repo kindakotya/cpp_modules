@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 02:08:32 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/16 20:02:34 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 05:27:56 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Animal
 protected:
 	std::string	_type;
 	Animal();
+	Animal(Animal const &obj);
+	Animal&	operator=(Animal const &obj);
 public:
 	virtual ~Animal();
 

@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 02:17:33 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/17 22:46:31 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:50:00 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 
 	WrongCat&	operator=(WrongCat const & obj);
 
-	// void	makeSound() const;
+	void	makeSound() const;
 };
 
 

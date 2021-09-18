@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 02:20:23 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 04:23:47 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 05:28:19 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int main() {
 	Animal*	zoo[ANIMAL_SIZE];
-	
+
 	for (int i = 0; i < ANIMAL_SIZE; i++){
 		if (i == ANIMAL_SIZE / 2)
 			std::cout << std::endl << "___________HALF___________" << std::endl << std::endl;

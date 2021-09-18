@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 04:00:29 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/04 20:50:03 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:43:29 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class AMateria
 protected:
 	std::string	_type;
 	AMateria(){}
-public:
 	AMateria(std::string const & type);
+public:
 	virtual ~AMateria();
 
 	std::string const &	getType() const; //Returns the materia type

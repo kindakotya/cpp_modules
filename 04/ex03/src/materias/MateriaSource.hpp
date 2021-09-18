@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 16:30:11 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/04 20:43:28 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:39:00 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ private:
 public:
 	MateriaSource();
 	MateriaSource(MateriaSource const & obj);
-	MateriaSource	operator=(MateriaSource const & obj);
 	~MateriaSource();
+	MateriaSource&	operator=(MateriaSource const & obj);
+
 	void learnMateria(AMateria*);
 	AMateria* createMateria(std::string const & type);
 };

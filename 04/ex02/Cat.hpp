@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 02:17:33 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 03:48:41 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:57:26 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ private:
 	Brain*	_brain;
 public:
 	Cat();
-	~Cat();
+	virtual ~Cat();
+	Cat(Cat const & obj);
 
+	Cat&	operator=(Cat const & obj);
 	void	makeSound() const;
 };
 

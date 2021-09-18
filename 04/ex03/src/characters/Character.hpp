@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:28:19 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/04 20:05:54 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:36:51 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 public:
 	Character(std::string const & name);
 	Character(Character const & obj);
-	Character	operator=(Character const & obj);
+	Character&	operator=(Character const & obj);
 	~Character();
 
 	std::string const &	getName() const;

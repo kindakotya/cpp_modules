@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 02:20:23 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/16 20:04:52 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:52:17 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,20 @@ int main() {
 
 	std::cout << std::endl << "Wrong animals initialize:" << std::endl;
 	const WrongAnimal*	wr_animal = new WrongAnimal();
-	const WrongCat*		wr_cat = new WrongCat();
+	const WrongCat*		wr_cat1 = new WrongCat();
+	const WrongAnimal*	wr_cat2 = new WrongCat();
 
 	std::cout << std::endl << "Wrong makeSound test:" << std::endl;
 	wr_animal->makeSound();
-	wr_cat->makeSound();
+	wr_cat1->makeSound();
+	wr_cat2->makeSound();
 
 	std::cout << std::endl << "Destruct:" << std::endl;
 	delete j;
 	delete i;
 	delete meta;
-	delete wr_cat;
+	delete wr_cat1;
+	delete wr_cat2;
 	delete wr_animal;
 	return 0;
 }

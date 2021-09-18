@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 17:08:35 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/04 20:58:07 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:39:52 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ MateriaSource::~MateriaSource(){
 }
 
 MateriaSource::MateriaSource(MateriaSource const & obj){
-	for (int i = 0; i < 4; i++){
-		if (obj._store[i])
-			this->_store[i] = obj._store[i]->clone();
-	}
+	*this = obj;
 }
 
-MateriaSource	MateriaSource::operator=(MateriaSource const & obj){
-	return MateriaSource(obj);
+MateriaSource&	MateriaSource::operator=(MateriaSource const & obj){
+	for (int i = 0; i < 4; i++){
+		if (obj._store[i])
+			_store[i] = obj._store[i]->clone();
+	}
+	return *this;
 }
 
 void MateriaSource::learnMateria(AMateria* mat){

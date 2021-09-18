@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:55:16 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/04 20:19:12 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:38:09 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ Character::Character(std::string const & name){
 }
 
 Character::Character(Character const & obj){
-	this->_name = obj._name;
+	*this = obj;
+}
+
+Character&	Character::operator=(Character const & obj){
+	_name = obj._name;
 	for(int i = 0; i < 4; i++){
 		if (obj._spells[i])
-			this->_spells[i] = obj._spells[i]->clone();
+			_spells[i] = obj._spells[i]->clone();
 	}
-}
-Character	Character::operator=(Character const & obj){
-	return (Character(obj));
+	return (*this);
 }
 
 Character::~Character(){

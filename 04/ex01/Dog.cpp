@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 02:43:38 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/01 04:07:16 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 05:05:03 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,15 @@ Dog::~Dog(){
 
 void	Dog::makeSound() const{
 	std::cout << "Woof!" << std::endl;
+}
+
+Dog::Dog(Dog const & obj){
+	*this = obj;
+}
+
+Dog&	Dog::operator=(Dog const & obj){
+	std::cout << "Dog has born." << std::endl;
+	_type = obj._type;
+	_brain = new Brain(*obj._brain);
+	return *this;
 }

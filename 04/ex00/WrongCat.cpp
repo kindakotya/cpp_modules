@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 02:42:29 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/17 22:47:28 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:50:31 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ WrongCat::~WrongCat(){
 	std::cout << "WrongCat has died." << std::endl;
 }
 
-// void	WrongCat::makeSound() const{
-// 	std::cout << "Meow." << std::endl;
-// }
+void	WrongCat::makeSound() const{
+	std::cout << "WrongMeow." << std::endl;
+}
 
 WrongCat::WrongCat(WrongCat const & obj){
 	*this = obj;

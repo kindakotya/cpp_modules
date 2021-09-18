@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 19:11:45 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/04 20:37:16 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 04:44:52 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main()
 	delete bob;
 	delete me;
 	delete src;
+	//getchar();
 	return 0;
 }
