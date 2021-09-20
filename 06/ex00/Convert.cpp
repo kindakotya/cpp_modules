@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 00:05:27 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/09 00:10:07 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/20 04:04:56 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ Convert::Convert(std::string const & str) : _str(str), _is_ex(false){
 Convert::Convert(Convert const & obj)
 	: _str(obj._str), _is_ex(obj._is_ex), _num(obj._num){}
 
-Convert	Convert::operator=(Convert const & obj){
-	return Convert(obj);
+Convert&	Convert::operator=(Convert const & obj){
+	_str = obj._str;
+	_is_ex = obj._is_ex;
+	_num = obj._num;
+	return *this;
 }
 
 Convert::~Convert(){}
@@ -61,9 +64,9 @@ void	Convert::dispFloat() const{
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
-	
 	std::cout << static_cast<float>(_num)
-			<< (fmod(_num, 1) > __FLT_MIN__ || isnan(_num) ? "" : ".0")
+			<< (fmod(_num, 1) > __FLT_MIN__ || isnan(_num)
+				|| static_cast<int>(_num / 1000000) > 0 ? "" : ".0")
 			<< 'f' << std::endl;
 }
 
@@ -74,5 +77,6 @@ void	Convert::dispDouble() const{
 		return ;
 	}
 	std::cout << _num
-			<< (fmod(_num, 1) > __FLT_MIN__ || isnan(_num) ? "" : ".0") << std::endl;
+			<< (fmod(_num, 1) > __FLT_MIN__ || isnan(_num)
+				|| static_cast<int>(_num / 1000000) > 0 ? "" : ".0") << std::endl;
 }
