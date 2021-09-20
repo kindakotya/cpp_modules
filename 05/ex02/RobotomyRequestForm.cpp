@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 05:37:51 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/07 06:25:53 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:49:23 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const & target) :
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & obj) :
 	Form("RobotomyRequest", 72, 45), _target(obj._target){}
 
-	RobotomyRequestForm	RobotomyRequestForm::operator=(RobotomyRequestForm const & obj){
-		return RobotomyRequestForm(obj);
-	}
+RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const & obj){
+	_target = obj._target;
+	return *this;
+}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 

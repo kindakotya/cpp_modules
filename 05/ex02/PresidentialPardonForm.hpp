@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 03:12:55 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/07 05:36:59 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:47:00 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	PresidentialPardonForm(std::string const & target);
 	~PresidentialPardonForm();
 
-	PresidentialPardonForm	operator=(PresidentialPardonForm const & obj);
+	PresidentialPardonForm&	operator=(PresidentialPardonForm const & obj);
 	void		execute(Bureaucrat const & executor) const;
 };
 

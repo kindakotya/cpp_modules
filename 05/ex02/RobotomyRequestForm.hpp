@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 04:45:05 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/07 05:39:33 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:49:01 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
 	RobotomyRequestForm(std::string const & target);
 	~RobotomyRequestForm();
 
-	RobotomyRequestForm	operator=(RobotomyRequestForm const & obj);
-	void		execute(Bureaucrat const & executor) const;
+	RobotomyRequestForm&	operator=(RobotomyRequestForm const & obj);
+	void					execute(Bureaucrat const & executor) const;
 };
 
 

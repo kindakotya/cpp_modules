@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 18:13:47 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 03:14:02 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:41:25 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ _name(name), _grade_sig(grade_sig), _grade_ex(grade_ex), _sign(false)
 }
 
 Form::Form(Form const & obj) :
-_name(obj.getName()), _grade_sig(obj.getSigGrade()), _grade_ex(obj.getExGrade()), _sign(obj.isSign())
+_name(obj._name), _grade_sig(obj._grade_sig), _grade_ex(obj._grade_ex), _sign(obj._sign)
 {
 	if (obj.getSigGrade() > 150 || obj.getExGrade() > 150)
 		throw GradeTooLowException();
@@ -34,8 +34,9 @@ _name(obj.getName()), _grade_sig(obj.getSigGrade()), _grade_ex(obj.getExGrade())
 
 Form::~Form() {}
 
-Form	Form::operator=(Form const & obj){
-	return Form(obj);
+Form&	Form::operator=(Form const & obj){
+	_sign = obj._sign;
+	return *this;
 }
 
 std::ostream&	operator<<(std::ostream & out, Form const & obj){

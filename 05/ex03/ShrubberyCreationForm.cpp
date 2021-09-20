@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 05:38:26 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/07 06:26:04 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:49:56 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target) :
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & obj) :
 	Form("ShrubberyCreation", 145, 137), _target(obj._target){}
 
-	ShrubberyCreationForm	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & obj){
-		return ShrubberyCreationForm(obj);
-	}
+ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & obj){
+	_target = obj._target;
+	return *this;
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 

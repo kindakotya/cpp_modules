@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 01:38:48 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/05 02:52:02 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/19 19:39:12 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ int main()
 	std::cout << std::endl << "Decrement test:" << std::endl;
 	{
 		try{
-			std::cout << "Bureaucrat kevin(\"Kevin\", 140): ";
+			std::cout << "Bureaucrat kevin(\"Kevin\", 149): ";
 			Bureaucrat kevin("Kevin", 149);
 			std::cout << kevin << std::endl;
 			std::cout << "--kevin: " << --kevin << std::endl;
-			std::cout << "--kevin: " << --kevin << std::endl;
+			std::cout << "kevin.decrement(): " << kevin.decrement() << std::endl;
 		}
 		catch(std::exception & e){
 			std::cout << e.what() << std::endl;
@@ -64,11 +64,12 @@ int main()
 			Bureaucrat garry("Garry", 2);
 			std::cout << garry << std::endl;
 			std::cout << "++garry: " << ++garry << std::endl;
-			std::cout << "++garry: " << ++garry << std::endl;
+			std::cout << "garry.increment(): " << garry.increment() << std::endl;
 		}
 		catch(std::exception & e){
 			std::cout << e.what() << std::endl;
 		}
 	}
+
 	return 0;
 }

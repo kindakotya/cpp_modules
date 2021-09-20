@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 17:39:43 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 03:13:50 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 06:02:05 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	Form();
 	Form(std::string const & name, int const grade_sig, int const grade_ex);
 	Form(Form const & obj);
-	Form	operator=(Form const & obj);
+	Form&	operator=(Form const & obj);
 	~Form();
 
 	std::string	getName() const;

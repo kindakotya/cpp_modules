@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 18:13:47 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 04:08:35 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:45:18 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,16 @@ _name(name), _grade_sig(grade_sig), _grade_ex(grade_ex), _sign(false)
 }
 
 Form::Form(Form const & obj) :
-_name(obj.getName()), _grade_sig(obj.getSigGrade()), _grade_ex(obj.getExGrade()), _sign(obj.isSign())
+_name(obj._name), _grade_sig(obj._grade_sig), _grade_ex(obj._grade_ex), _sign(obj._sign)
 {
 	if (obj.getSigGrade() > 150 || obj.getExGrade() > 150)
 		throw GradeTooLowException();
 	else if (obj.getSigGrade() < 1 || obj.getExGrade() < 1)
 		throw GradeTooHighException();
+}
+Form&	Form::operator=(Form const & obj){
+	_sign = obj._sign;
+	return *this;
 }
 
 Form::~Form() {}

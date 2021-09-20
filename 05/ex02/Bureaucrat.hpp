@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 01:10:38 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/06 04:11:20 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/19 19:35:28 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ public:
 	Bureaucrat(Bureaucrat const & obj);
 	Bureaucrat(std::string const & name, int grade);
 	~Bureaucrat();
-	Bureaucrat	operator=(Bureaucrat const & obj);
+	Bureaucrat&	operator=(Bureaucrat const & obj);
 
 	std::string	getName() const;
 	int			getGrade() const;
 	void		signForm(Form & form) const;
 	void		executeForm(Form const & form) const;
+	Bureaucrat&	increment();
+	Bureaucrat& decrement();
 	Bureaucrat&	operator++();
 	Bureaucrat&	operator--();
 

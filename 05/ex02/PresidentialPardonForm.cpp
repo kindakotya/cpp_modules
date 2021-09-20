@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 05:37:03 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/07 05:54:55 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:48:32 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const & target) :
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & obj) :
 	Form("PresidentialPardon", 25, 5), _target(obj._target){}
 
-	PresidentialPardonForm	PresidentialPardonForm::operator=(PresidentialPardonForm const & obj){
-		return PresidentialPardonForm(obj);
-	}
+PresidentialPardonForm&	PresidentialPardonForm::operator=(PresidentialPardonForm const & obj){
+	_target = obj._target;
+	return *this;
+}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 

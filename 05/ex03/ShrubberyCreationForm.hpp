@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 04:45:07 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/07 05:38:19 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:50:06 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ public:
 	ShrubberyCreationForm(std::string const & target);
 	~ShrubberyCreationForm();
 
-	ShrubberyCreationForm	operator=(ShrubberyCreationForm const & obj);
-	void		execute(Bureaucrat const & executor) const;
+	ShrubberyCreationForm&	operator=(ShrubberyCreationForm const & obj);
+	void					execute(Bureaucrat const & executor) const;
 };
 
 

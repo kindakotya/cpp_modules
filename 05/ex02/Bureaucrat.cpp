@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 02:04:41 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/07 05:58:16 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/19 19:34:52 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name){
 Bureaucrat::Bureaucrat() : _name("Garry"), _grade(150) {}
 
 Bureaucrat::Bureaucrat(Bureaucrat const & obj)
-	: _name(obj.getName()), _grade(obj.getGrade()) {}
+	: _name(obj._name), _grade(obj._grade) {}
 
-Bureaucrat	Bureaucrat::operator=(Bureaucrat const & obj){
-	return Bureaucrat(obj);
+Bureaucrat&	Bureaucrat::operator=(Bureaucrat const & obj){
+	_grade = obj._grade;
+	return *this;
 }
 
 Bureaucrat::~Bureaucrat(){}
@@ -71,6 +72,15 @@ void	Bureaucrat::executeForm(Form const & form) const{
 			std::cout << "form is not signed.";
 	}
 	std::cout << std::endl;
+}
+
+Bureaucrat&	Bureaucrat::increment(){
+	++*this;
+	return *this;
+}
+Bureaucrat& Bureaucrat::decrement(){
+	--*this;
+	return *this;
 }
 
 Bureaucrat&	Bureaucrat::operator++(){
