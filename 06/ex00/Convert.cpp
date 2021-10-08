@@ -6,7 +6,7 @@
 /*   By: gmayweat <gmayweat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 00:05:27 by gmayweat          #+#    #+#             */
-/*   Updated: 2021/09/20 04:04:56 by gmayweat         ###   ########.fr       */
+/*   Updated: 2021/09/28 18:16:45 by gmayweat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Convert::~Convert(){}
 
 void	Convert::dispChar() const{
 	std::cout << "char: ";
-	if (_num < CHAR_MIN || _num > CHAR_MAX || _is_ex || std::isnan(_num)){
+	if (_num < CHAR_MIN || _num > CHAR_MAX || _is_ex || std::isnan(_num) || fmod(_num, 1) > __FLT_MIN__){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
@@ -60,12 +60,12 @@ void	Convert::dispInt() const{
 
 void	Convert::dispFloat() const{
 	std::cout << "float: ";
-	if (_num < -__FLT_MAX__ || _num > __FLT_MAX__ || _is_ex){
+	if (((_num < -__FLT_MAX__ || _num > __FLT_MAX__) && !isinf(_num)) || _is_ex){
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
 	std::cout << static_cast<float>(_num)
-			<< (fmod(_num, 1) > __FLT_MIN__ || isnan(_num)
+			<< (fmod(_num, 1) > __FLT_MIN__ || isnan(_num) || isinf(_num)
 				|| static_cast<int>(_num / 1000000) > 0 ? "" : ".0")
 			<< 'f' << std::endl;
 }
@@ -77,6 +77,6 @@ void	Convert::dispDouble() const{
 		return ;
 	}
 	std::cout << _num
-			<< (fmod(_num, 1) > __FLT_MIN__ || isnan(_num)
+			<< (fmod(_num, 1) > __FLT_MIN__ || isnan(_num) || isinf(_num)
 				|| static_cast<int>(_num / 1000000) > 0 ? "" : ".0") << std::endl;
 }
